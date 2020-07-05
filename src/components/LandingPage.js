@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import modalImg from '../assets/images/modal-image.jpg';
+import { ModalContainer } from './index';
 
 export function Landing() {
 
@@ -14,7 +15,10 @@ export function Landing() {
         <LandingContainer>
             <div className = 'card'>
                 <img src = {modalImg} alt = 'modal' />
-                <button>Open Modal</button>
+                <button onClick = {toggleModal}>Open Modal</button>
+                {modal ? (
+                    <ModalContainer closeModal = {toggleModal} />
+                ) : null}
             </div>
         </LandingContainer>
     );
